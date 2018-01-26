@@ -17,7 +17,7 @@ public class DemoBootProjectApplication {
 
 		@GetMapping("/")
 		public String test() {
-			return "Hello FantasyManager!";
+			return "Hello FantasyManager!!!!!!!!!!";
 		}
 	}
 }
