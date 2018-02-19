@@ -118,7 +118,7 @@ public class ServicioParserEspnImpl {
 				// Si hemos superado la fecha fin hemos llegado al final del
 				// parseo
 				if (dateTimeFrom.isAfter(dateTimeTo)) {
-					log.debug("Fin del parseo!!");
+					log.info("Fin del parseo!!");
 					return;
 				}
 			}
@@ -130,11 +130,11 @@ public class ServicioParserEspnImpl {
 			getStatistics(dateTimeFrom, dateTimeTo);
 
 		} catch (final MalformedURLException mue) {
-			log.debug("Error al obtener las estadisticas: " + mue.getMessage());
+			log.info("Error al obtener las estadisticas: " + mue.getMessage());
 		} catch (final IOException ioe) {
-			log.debug("Error al obtener las estadisticas: " + ioe.getMessage());
+			log.info("Error al obtener las estadisticas: " + ioe.getMessage());
 		} catch (final FantasyManagerException e) {
-			log.debug("Error al obtener las estadisticas: " + e.getMessage());
+			log.info("Error al obtener las estadisticas: " + e.getMessage());
 		}
 	}
 
@@ -202,7 +202,7 @@ public class ServicioParserEspnImpl {
 
 				partido = servicioPartido.save(partido);
 
-				log.debug(partido.toString());
+				log.info(partido.toString());
 
 				// ***************************************************
 				// ************ Parseamos Estadisticas Visitantes
@@ -225,7 +225,7 @@ public class ServicioParserEspnImpl {
 
 								estadistica = servicioEstadistica.save(estadistica);
 
-								log.debug(estadistica.toString());
+								log.info(estadistica.toString());
 							}
 						}
 					}
@@ -251,7 +251,7 @@ public class ServicioParserEspnImpl {
 
 								estadistica = servicioEstadistica.save(estadistica);
 
-								log.debug(estadistica.toString());
+								log.info(estadistica.toString());
 							}
 						}
 					}
@@ -268,7 +268,7 @@ public class ServicioParserEspnImpl {
 
 		final String playerId = StringUtils.substringBetween(playerAnchor.getHrefAttribute(), URL_PLAYER_ID, "/");
 		// if (playerId == null) {
-		log.debug("playerId: " + playerId);
+		log.info("playerId: " + playerId);
 		// }
 		Jugador jugador = servicioJugador.findJugadorByIdNba(playerId);
 		// Jugador jugador = null;
@@ -412,15 +412,15 @@ public class ServicioParserEspnImpl {
 					}
 				}
 
-				log.debug("Equipo=" + codigoCorto + "/" + codigoLargo);
+				log.info("Equipo=" + codigoCorto + "/" + codigoLargo);
 			}
 
-			log.debug("Parseo de equipos OK");
+			log.info("Parseo de equipos OK");
 
 		} catch (final MalformedURLException mue) {
-			log.debug("Error al obtener los equipos");
+			log.info("Error al obtener los equipos");
 		} catch (final IOException ioe) {
-			log.debug("Error al obtener los equipos");
+			log.info("Error al obtener los equipos");
 		} catch (final Exception e) {
 			throw new FantasyManagerException("Se ha producido un error al guardar el equipo.", e);
 		}
