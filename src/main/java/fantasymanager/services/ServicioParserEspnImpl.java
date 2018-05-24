@@ -42,7 +42,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class ServicioParserEspnImpl {
+public class ServicioParserEspnImpl implements ServicioParserEspn {
 
 	// private static final Log LOG =
 	// LogFactory.getLog(ServicioParserEspnImpl.class);
@@ -372,6 +372,7 @@ public class ServicioParserEspnImpl {
 		return teamInfoCod;
 	}
 
+	@Override
 	public void getRosters() throws FantasyManagerParserException, FantasyManagerException {
 		try {
 			final HtmlPage teamsPage = webClient.getPage(URL_TEAMS);
