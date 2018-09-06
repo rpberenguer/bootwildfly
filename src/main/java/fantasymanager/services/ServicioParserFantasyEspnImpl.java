@@ -36,6 +36,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
+@Deprecated
 public class ServicioParserFantasyEspnImpl implements ServicioParserFantasyEspn {
 
 	private Map<String, String> posiciones;

@@ -5,6 +5,7 @@ import java.util.List;
 import fantasymanager.data.Jugador;
 import fantasymanager.exceptions.FantasyManagerParserException;
 
+@Deprecated
 public interface ServicioParserFantasyEspn {
 
 	List<Jugador> getJugadoresLibres() throws FantasyManagerParserException;
